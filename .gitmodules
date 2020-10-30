@@ -1,0 +1,9 @@
+[submodule "ijk/ijkplayer"]
+	path = ijk/ijkplayer
+	url = git@github.com:leo94666/ijkplayer.git
+[submodule "labelImg"]
+	path = labelImg
+	url = git@github.com:leo94666/labelImg.git
+[submodule "yolo3/darknet"]
+	path = yolo3/darknet
+	url = git@github.com:leo94666/darknet.git
