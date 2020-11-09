@@ -1,9 +1,12 @@
 [submodule "ijk/ijkplayer"]
 	path = ijk/ijkplayer
-	url = git@github.com:leo94666/ijkplayer.git
+	url = git@gitee.com:ZoomTec/ijkplayer.git
 [submodule "labelImg"]
 	path = labelImg
-	url = git@github.com:leo94666/labelImg.git
+	url = git@gitee.com:ZoomTec/labelImg.git
 [submodule "yolo3/darknet"]
 	path = yolo3/darknet
-	url = git@github.com:leo94666/darknet.git
+	url = git@gitee.com:ZoomTec/darknet.git
+[submodule "ffmpeg/ffmpeg-4.3"]
+	path = ffmpeg/ffmpeg-4.3
+	url = git@gitee.com:mirrors/ffmpeg.git
