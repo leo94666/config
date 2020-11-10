@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Home/leo/.oh-my-zsh"
+export ZSH="/home/leo/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -98,20 +98,43 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export PATH="/usr/local/opt/ruby/bin:$PATH"
+#
+#
+#
+#
 
+OS=`uname -a`
 
-export JAVA_8_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home
+echo $OS
 
-export JAVA_11_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.1.jdk/Contents/Home
+APPLE="Darwin"
+CENTOS="Centos"
+UBUNTU="Ubuntu"
 
+if [[ "$OS" =~ "$UBUNTU" ]];then
+    echo '=================>加载ubuntu配置'
+    export JAVA_8_HOME=~/Android/java/jdk1.8.0_271
+    export JRE_HOME=${JAVA_8_HOME}/jre
+    export CLASSPATH=.:${JAVA_8_HOME}/lib:${JRE_HOME}/lib
+    export PATH=.:${JAVA_8_HOME}/bin:$PATH
+    export ANDROID_NDK=~/Android/ndk/android-ndk-r14b/
+    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64
+    export PATH=$PATH:/usr/local/cuda/bin
+    export CUDA_HOME=$CUDA_HOME:/usr/local/cuda
+    export PATH=$PATH:/home/leo/.local/bin
+elif [[ "$OS" =~ "$APPLE" ]];then
+    echo '=================>加载apple配置'
+    export JAVA_8_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home
+    export JAVA_11_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.1.jdk/Contents/Home
+    export PATH="/usr/local/opt/ruby/bin:$PATH"
+    export JAVA_8_HOME=$JAVA_8_HOME
+    export JAVA_11_HOME=$JAVA_11_HOME
+    alias jdk8='export JAVA_HOME=$JAVA_8_HOME'
+    alias jdk11='export JAVA_HOME=$JAVA_11_HOME'
+else
+    echo "================>unknown os"
+fi
 
-export JAVA_8_HOME=$JAVA_8_HOME
-export JAVA_11_HOME=$JAVA_11_HOME
-
-alias jdk8='export JAVA_HOME=$JAVA_8_HOME'
-
-alias jdk11='export JAVA_HOME=$JAVA_11_HOME'
 
 
 

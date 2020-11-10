@@ -2,19 +2,41 @@
 
 
 
+cp ~/.zshrc config/zshrc
+
+cp ~/.vimrc config/vimrc
+
+cp -rf ~/.vim config/vim
+
 
 sudo apt update
 
 
 # install and config git
-sudo apt install git
 
-ssh-keygen -t rsa -C 'leo'
+if ![-x "$command -v git"];then
+    echo '========================installing git : '
+    sudo apt install git
+    ssh-keygen -t rsa -C 'leo'
 
+else
+    echo 'Success: git is already install. '
+fi
+
+
+
+if ![-x "$command -v vim"];then
+
+else
+    echo 'Success: vim is already install.'
+fi
+
+
+if
 
 # install and config vim
-sudo apt install vim-nox
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+#sudo apt install vim-nox
+#git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 
 #sudo apt install build-essential cmake python3-dev
@@ -22,18 +44,14 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 
 # install zsh
-sudo apt install zsh
-sh config/install_zsh.sh
+#sudo apt install zsh
+#sh config/install_zsh.sh
 
 #
-sudo apt install autojump
+#sudo apt install autojump
 
-sudo apt install yasm
+#sudo apt install yasm
 
-
-cp ~/.zshrc config/zshrc
-
-cp ~/.vimrc config/vimrc
 
 
 
